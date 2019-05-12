@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>act</groupId>
-	<artifactId>Springboot-Actuator</artifactId>
+	<artifactId>6_Springboot-Actuator</artifactId>
 	<version>SNAPSHOT-0.0.1</version>
 	<packaging>jar</packaging>
 

@@ -6,19 +6,12 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.file.FlatFileItemReader;
-import org.springframework.batch.item.file.LineMapper;
-import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
-import org.springframework.batch.item.file.mapping.DefaultLineMapper;
-import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.Resource;
 
+import batch.job.batch.UserProcessor;
+import batch.job.batch.UserReader;
+import batch.job.batch.UserWriter;
 import batch.job.model.User;
 
 @Configuration
@@ -27,16 +20,16 @@ public class BatchConfiguration {
 
 	@Bean
 	public Job jobConfig(JobBuilderFactory jobBuilderFactory, StepBuilderFactory stepBuilderFactory,
-			ItemReader<User> itemReader, ItemProcessor<User, User> itemProcessor, ItemWriter<User> itemWriter) {
+			UserReader userReader, UserProcessor userProcessor, UserWriter userWriter) {
 
-		Step step = stepBuilderFactory.get("ETL-File-Load").<User, User>chunk(100).reader(itemReader)
-				.processor(itemProcessor).writer(itemWriter).build();
+		Step step = stepBuilderFactory.get("ETL-File-Load").<User, User>chunk(100).reader(userReader)
+				.processor(userProcessor).writer(userWriter).build();
 
 		return jobBuilderFactory.get("ETL-Load").incrementer(new RunIdIncrementer()).start(step).build();
 	}
 
 	// Provides ItemReader, no need to implement ItemReader<>
-	@Bean
+	/*@Bean
 	public FlatFileItemReader<User> itemReader(@Value("${inputFile}") Resource resource) {
 		FlatFileItemReader<User> flatFileItemReader = new FlatFileItemReader<>();
 		flatFileItemReader.setResource(resource);
@@ -60,5 +53,5 @@ public class BatchConfiguration {
 		defaultLineMapper.setLineTokenizer(lineTokenizer);
 		defaultLineMapper.setFieldSetMapper(fieldSetMapper);
 		return defaultLineMapper;
-	}
+	}*/
 }

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>api</groupId>
-	<artifactId>Springboot-Swagger</artifactId>
+	<artifactId>7_Springboot-Swagger</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
