@@ -15,6 +15,13 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
+/*
+ * The @@RestController annotation creates a rest controller and @Autowired annotation helps spring to inject a bean into that field, 
+ * if present inside spring container.
+ * 
+ * The @RequestMapping annotation helps to map request to the given method by handler name which nothing but the path URL and type of HTTP Operation.
+ */
+
 @RestController
 public class StudentController {
 

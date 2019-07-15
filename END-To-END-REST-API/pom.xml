@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.api</groupId>
-	<artifactId>REST-API</artifactId>
+	<artifactId>END-To-END-REST-API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>REST-API</name>
+	<name>END-To-END-REST-API</name>
 	<description>Demo project for creating REST API in Spring Boot</description>
 
 	<properties>
