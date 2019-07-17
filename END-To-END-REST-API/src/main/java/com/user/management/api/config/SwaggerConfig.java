@@ -1,4 +1,4 @@
-package com.api.config;
+package com.user.management.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,12 +26,13 @@ public class SwaggerConfig {
 	@Bean
 	public Docket docketConfig() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.api.controller")).build().apiInfo(buildApiInfo());
+				.apis(RequestHandlerSelectors.basePackage("com.user.management.api.controller")).build().apiInfo(buildApiInfo());
 	}
 
 	// Provides basic information about the API in documentation
 	private ApiInfo buildApiInfo() {
-		return new ApiInfoBuilder().title("Student Management API").description("A simple api for student management.")
-				.contact(new Contact("Subhadeep Sen", "", "")).version("0.0.1").build();
+		return new ApiInfoBuilder().title("User Details Management API")
+				.description("A simple api for user details management.").contact(new Contact("Subhadeep Sen", "", ""))
+				.version("0.0.1").build();
 	}
 }

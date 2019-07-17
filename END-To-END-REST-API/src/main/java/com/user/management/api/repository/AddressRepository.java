@@ -1,9 +1,9 @@
-package com.api.repository;
+package com.user.management.api.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.model.Address;
+import com.user.management.api.model.Address;
 
 /*
  * As JPA and H2 In-Memory SQL Database are used, this interface provides methods to simplify operations on the Database.

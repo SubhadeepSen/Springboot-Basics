@@ -1,9 +1,9 @@
-package com.api.repository;
+package com.user.management.api.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.model.Student;
+import com.user.management.api.model.UserDetails;
 
 /*
  * As JPA and H2 In-Memory SQL Database are used, this interface provides methods to simplify operations on the Database.
@@ -12,6 +12,6 @@ import com.api.model.Student;
  */
 
 @Repository
-public interface StudentRepository extends CrudRepository<Student, Integer> {
+public interface UserDetailsRepository extends CrudRepository<UserDetails, Integer> {
 
 }

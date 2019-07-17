@@ -1,4 +1,4 @@
-package com.api.starter;
+package com.user.management.api.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,12 +12,12 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * The @EnableJpaRepositories helps spring to enable the JPA Repositories and create beans in the specified package.
  */
 
-@SpringBootApplication(scanBasePackages = "com.api.*")
-@EntityScan("com.api.model")
-@EnableJpaRepositories("com.api.repository")
-public class APIStarter {
+@SpringBootApplication(scanBasePackages = "com.user.management.api.*")
+@EntityScan("com.user.management.api.model")
+@EnableJpaRepositories("com.user.management.api.repository")
+public class UserManagementApiStarter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(APIStarter.class, args);
+		SpringApplication.run(UserManagementApiStarter.class, args);
 	}
 }

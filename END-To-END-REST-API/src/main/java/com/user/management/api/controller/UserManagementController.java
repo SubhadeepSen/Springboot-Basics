@@ -1,4 +1,4 @@
-package com.api.controller;
+package com.user.management.api.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.model.Student;
-import com.api.service.StudentService;
+import com.user.management.api.model.UserDetails;
+import com.user.management.api.service.UserManagementService;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -23,15 +23,15 @@ import io.swagger.annotations.ApiOperation;
  */
 
 @RestController
-public class StudentController {
+public class UserManagementController {
 
 	@Autowired
-	private StudentService studentService;
+	private UserManagementService userManagementService;
 
-	@ApiOperation("Get All Students")
-	@ApiImplicitParams(@ApiImplicitParam(name = "Basic Authentication", paramType = "header", required = true))
-	@RequestMapping(value = "/students", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Student> getAllStudents() {
-		return studentService.getAllStudents();
+	@ApiOperation("Get All User Details")
+	@ApiImplicitParams(@ApiImplicitParam(name = "Authorization", paramType = "header", required = true))
+	@RequestMapping(value = "/userdetails", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<UserDetails> getAllStudents() {
+		return userManagementService.getAllStudents();
 	}
 }

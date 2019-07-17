@@ -1,4 +1,4 @@
-package com.api.config;
+package com.user.management.api.config;
 
 import java.io.IOException;
 import java.io.PrintWriter;
